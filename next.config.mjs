@@ -2,6 +2,6 @@ export default {
   images: {
     unoptimized: true,
   },
-  output: 'export',
+  output: "standalone",
   trailingSlash: true,
 };

@@ -4,6 +4,6 @@ export async function generateStaticParams() {
   return [{ slug: 'demo-snapshot' }];
 }
 
-export default function SnapshotDetailPage({ params }: { params: { slug: string } }) {
-  return <SnapshotDetailClient params={params} />;
+export default async function SnapshotDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  return <SnapshotDetailClient params={await params} />;
 }

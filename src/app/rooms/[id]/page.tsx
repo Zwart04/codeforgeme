@@ -4,6 +4,6 @@ export async function generateStaticParams() {
   return [{ id: 'demo-room' }];
 }
 
-export default function RoomDetailPage({ params }: { params: { id: string } }) {
-  return <RoomDetailClient params={params} />;
+export default async function RoomDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  return <RoomDetailClient params={await params} />;
 }
